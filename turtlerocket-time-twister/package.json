@@ -43,5 +43,10 @@
   },
   "devDependencies": {
     "@testing-library/user-event": "^14.6.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^ical\\.js$": "<rootDir>/node_modules/ical.js/dist/ical.es5.cjs"
+    }
   }
 }

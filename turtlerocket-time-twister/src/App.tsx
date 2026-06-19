@@ -3,6 +3,8 @@ import './App.css';
 import { createInitialState, updateEnergyLevel, setProcessing } from './utils/stateHelpers';
 import { resetEnergyLevels } from './utils/energyHelpers';
 import { validateFileType, validateFileSize, checkICSFormat } from './utils/validation';
+import { parseICSFile } from './utils/icsParser';
+import { setUploadedEvents } from './utils/stateHelpers';
 import type { AppState, EnergyLevel } from './types';
 import { EnergySelector } from './components/EnergySelector';
 import { FileUpload } from './components/FileUpload';
@@ -43,7 +45,13 @@ function App() {
         setAppState((s) => setProcessing(s, false));
         return;
       }
-      setAppState((s) => setProcessing(s, false));
+      try {
+        const events = parseICSFile(content);
+        setAppState((s) => setUploadedEvents(setProcessing(s, false), events));
+      } catch {
+        setUploadError('Could not parse the calendar file.');
+        setAppState((s) => setProcessing(s, false));
+      }
     };
     reader.readAsText(file);
   }

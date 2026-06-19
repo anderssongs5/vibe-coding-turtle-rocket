@@ -149,18 +149,18 @@
 - [x] Commit: "Add keyword configuration"
 
 ### Iteration 4.2: Classification Engine
-- [ ] Create `src/utils/classifier.ts`
-- [ ] Implement `classifyEvent()` function
-- [ ] Implement `classifyEvents()` batch function
-- [ ] Add `getMatchedKeywords()` for reasoning
-- [ ] Support partial word matching
-- [ ] Case-insensitive matching
-- [ ] Write test: Single keyword matching
-- [ ] Write test: Multiple keyword scenarios
-- [ ] Write test: Precedence rules (heavy > light)
-- [ ] Write test: Edge cases (empty titles)
-- [ ] Write test: Performance with many events
-- [ ] Commit: "Add classification engine"
+- [x] Create `src/utils/classifier.ts`
+- [x] Implement `classifyEvent()` function
+- [x] Implement `classifyEvents()` batch function
+- [x] Add `getMatchedKeywords()` for reasoning
+- [x] Support partial word matching
+- [x] Case-insensitive matching
+- [x] Write test: Single keyword matching
+- [x] Write test: Multiple keyword scenarios
+- [x] Write test: Precedence rules (heavy > light)
+- [x] Write test: Edge cases (empty titles)
+- [x] Write test: Performance with many events
+- [x] Commit: "Add classification engine"
 
 ---
 

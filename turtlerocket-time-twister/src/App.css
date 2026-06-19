@@ -28,8 +28,21 @@ body {
 }
 
 h1 {
-  margin: 0 0 8px;
+  margin: 0 0 4px;
   font-size: 2rem;
   font-weight: 700;
   color: #1a1a2e;
+}
+
+.app-subtitle {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.app-loading {
+  margin: 8px 0 16px;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
 }

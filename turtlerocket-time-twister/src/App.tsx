@@ -13,6 +13,7 @@ import { FileUpload } from './components/FileUpload';
 import { ScheduleDisplay } from './components/ScheduleDisplay';
 import { ScheduleComparison } from './components/ScheduleComparison';
 import { ExportButton } from './components/ExportButton';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 function App() {
   const [appState, setAppState] = useState<AppState>(createInitialState);
@@ -64,6 +65,10 @@ function App() {
         setAppState((s) => setProcessing(s, false));
       }
     };
+    reader.onerror = () => {
+      setUploadError('Failed to read the file.');
+      setAppState((s) => setProcessing(s, false));
+    };
     reader.readAsText(file);
   }
 
@@ -73,42 +78,54 @@ function App() {
     setAppState((s) => ({ ...s, uploadedEvents: [], classifiedEvents: [], optimizedEvents: [] }));
   }
 
+  const hasResults = appState.classifiedEvents.length > 0;
+
   return (
-    <div className="app-wrapper">
-      <div className="app-container">
-        <h1>TurtleRocket Time Twister</h1>
-        <EnergySelector
-          energyLevels={appState.energyLevels}
-          onEnergyChange={handleEnergyChange}
-          onReset={handleEnergyReset}
-        />
-        <FileUpload
-          onFileSelect={handleFileSelect}
-          isProcessing={appState.isProcessing}
-          error={uploadError}
-          selectedFileName={selectedFileName}
-          onClear={handleFileClear}
-        />
-        {appState.classifiedEvents.length > 0 && (
-          <ScheduleDisplay
-            events={appState.classifiedEvents}
-            showEnergyLevels
+    <ErrorBoundary>
+      <div className="app-wrapper">
+        <div className="app-container">
+          <h1>TurtleRocket Time Twister</h1>
+          <p className="app-subtitle">
+            Set your energy levels, upload a calendar, and get an optimized schedule.
+          </p>
+
+          <EnergySelector
             energyLevels={appState.energyLevels}
-            title="Original Schedule"
+            onEnergyChange={handleEnergyChange}
+            onReset={handleEnergyReset}
           />
-        )}
-        {appState.optimizedEvents.length > 0 && (
-          <>
-            <ScheduleComparison events={appState.optimizedEvents} />
-            <ExportButton
-              events={appState.optimizedEvents}
-              isProcessing={appState.isProcessing}
-              disabled={appState.optimizedEvents.length === 0}
-            />
-          </>
-        )}
+
+          <FileUpload
+            onFileSelect={handleFileSelect}
+            isProcessing={appState.isProcessing}
+            error={uploadError}
+            selectedFileName={selectedFileName}
+            onClear={handleFileClear}
+          />
+
+          {appState.isProcessing && (
+            <p className="app-loading" aria-live="polite">Analyzing your calendar…</p>
+          )}
+
+          {hasResults && (
+            <>
+              <ScheduleDisplay
+                events={appState.classifiedEvents}
+                showEnergyLevels
+                energyLevels={appState.energyLevels}
+                title="Original Schedule"
+              />
+              <ScheduleComparison events={appState.optimizedEvents} />
+              <ExportButton
+                events={appState.optimizedEvents}
+                isProcessing={appState.isProcessing}
+                disabled={false}
+              />
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 }
 

@@ -285,17 +285,17 @@
 ## 🎨 Phase 8: Integration & Polish
 
 ### Main Integration
-- [ ] Wire all components in `App.tsx`
-- [ ] Implement complete data flow:
-  - [ ] Energy selection → State
-  - [ ] File upload → Parse → State
-  - [ ] Classification → State
-  - [ ] Optimization → State
-  - [ ] Preview → Export
-- [ ] Add loading states between steps
-- [ ] Add error boundaries
-- [ ] Write integration tests
-- [ ] Commit: "Complete app integration"
+- [x] Wire all components in `App.tsx`
+- [x] Implement complete data flow:
+  - [x] Energy selection → State
+  - [x] File upload → Parse → State
+  - [x] Classification → State
+  - [x] Optimization → State
+  - [x] Preview → Export
+- [x] Add loading states between steps
+- [x] Add error boundaries (`ErrorBoundary` class component wrapping App)
+- [x] Write integration tests (`App.integration.test.tsx` — 8 tests)
+- [x] Commit: "Complete app integration"
 
 ### User Experience
 - [ ] Add smooth transitions

@@ -12,6 +12,7 @@ import { EnergySelector } from './components/EnergySelector';
 import { FileUpload } from './components/FileUpload';
 import { ScheduleDisplay } from './components/ScheduleDisplay';
 import { ScheduleComparison } from './components/ScheduleComparison';
+import { ExportButton } from './components/ExportButton';
 
 function App() {
   const [appState, setAppState] = useState<AppState>(createInitialState);
@@ -97,7 +98,14 @@ function App() {
           />
         )}
         {appState.optimizedEvents.length > 0 && (
-          <ScheduleComparison events={appState.optimizedEvents} />
+          <>
+            <ScheduleComparison events={appState.optimizedEvents} />
+            <ExportButton
+              events={appState.optimizedEvents}
+              isProcessing={appState.isProcessing}
+              disabled={appState.optimizedEvents.length === 0}
+            />
+          </>
         )}
       </div>
     </div>

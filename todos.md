@@ -256,18 +256,18 @@
 - [x] Commit: "Add ICS generation"
 
 ### Iteration 7.2: Download Implementation
-- [ ] Create `src/components/ExportButton.tsx`
-- [ ] Create `src/utils/download.ts`
-- [ ] Implement file download:
-  - [ ] Create blob from ICS
-  - [ ] Trigger browser download
-  - [ ] Generate filename with timestamp
-- [ ] Add loading state
-- [ ] Add success feedback
-- [ ] Write test: Download trigger
-- [ ] Write test: Filename generation
-- [ ] Write test: Error handling
-- [ ] Commit: "Add download functionality"
+- [x] Create `src/components/ExportButton.tsx`
+- [x] Create `src/utils/download.ts`
+- [x] Implement file download:
+  - [x] Create blob from ICS
+  - [x] Trigger browser download
+  - [x] Generate filename with timestamp
+- [x] Add loading state
+- [x] Add success feedback
+- [x] Write test: Download trigger
+- [x] Write test: Filename generation
+- [x] Write test: Error handling
+- [x] Commit: "Add download functionality"
 
 ### Iteration 7.3: Full Integration
 - [ ] Wire export to optimization results

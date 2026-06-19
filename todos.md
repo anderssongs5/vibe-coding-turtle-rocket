@@ -10,9 +10,9 @@
   - [x] Create `src/components/` directory
   - [x] Create `src/utils/` directory
   - [x] Create `src/types/` directory
-  - [ ] Create `src/config/` directory
-  - [ ] Create `src/__tests__/` directory
-  - [ ] Create `src/test-utils/` directory
+  - [x] Create `src/config/` directory
+  - [x] Create `src/__tests__/` directory
+  - [x] Create `src/test-utils/` directory
 
 ### Git Setup
 - [x] Initialize git repository
@@ -40,12 +40,12 @@
   - [x] Define `ClassifiedEvent` interface
   - [x] Define `OptimizedEvent` interface
   - [x] Define `AppState` interface
-- [ ] Initialize state in `App.tsx`
-- [ ] Create `src/utils/stateHelpers.ts`
-- [ ] Write test: Initial state has correct defaults
-- [ ] Write test: State update functions work correctly
-- [ ] Write test: State immutability is maintained
-- [ ] Commit: "Add state management and types"
+- [x] Initialize state in `App.tsx`
+- [x] Create `src/utils/stateHelpers.ts`
+- [x] Write test: Initial state has correct defaults
+- [x] Write test: State update functions work correctly
+- [x] Write test: State immutability is maintained
+- [x] Commit: "Add state management and types"
 
 ---
 

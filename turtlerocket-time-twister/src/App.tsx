@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import { createInitialState } from './utils/stateHelpers';
+import type { AppState } from './types';
 
 function App() {
+  const [appState, setAppState] = useState<AppState>(createInitialState);
+
   return (
     <div className="app-wrapper">
       <div className="app-container">

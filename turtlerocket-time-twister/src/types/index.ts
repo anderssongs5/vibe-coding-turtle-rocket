@@ -1,4 +1,7 @@
-export type EnergyLevel = 'low' | 'medium' | 'high';
+import type { CognitiveLoad } from './classification';
+import type { EnergyLevel } from './energy';
+
+export type { CognitiveLoad, EnergyLevel };
 
 export interface CalendarEvent {
   uid: string;
@@ -25,4 +28,3 @@ export interface AppState {
   isProcessing: boolean;
 }
 
-export type { CognitiveLoad } from './classification';

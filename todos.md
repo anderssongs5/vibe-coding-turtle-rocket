@@ -223,17 +223,17 @@
 - [x] Commit: "Add schedule display"
 
 ### Iteration 6.2: Comparison View
-- [ ] Create `src/components/ScheduleComparison.tsx`
-- [ ] Show original vs optimized side-by-side
-- [ ] Add movement indicators:
-  - [ ] Strikethrough for old times
-  - [ ] Bold for new times
-  - [ ] Arrows for direction (↑↓)
-  - [ ] Time difference labels
-- [ ] Write test: Change detection
-- [ ] Write test: Movement indicators
-- [ ] Write test: Responsive layout
-- [ ] Commit: "Add comparison view"
+- [x] Create `src/components/ScheduleComparison.tsx`
+- [x] Show original vs optimized side-by-side
+- [x] Add movement indicators:
+  - [x] Strikethrough for old times
+  - [x] Bold for new times
+  - [x] Arrows for direction (↑↓)
+  - [x] Time difference labels
+- [x] Write test: Change detection
+- [x] Write test: Movement indicators
+- [x] Write test: Responsive layout
+- [x] Commit: "Add comparison view"
 
 ---
 

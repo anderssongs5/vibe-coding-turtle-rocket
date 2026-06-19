@@ -11,6 +11,7 @@ import type { AppState, EnergyLevel } from './types';
 import { EnergySelector } from './components/EnergySelector';
 import { FileUpload } from './components/FileUpload';
 import { ScheduleDisplay } from './components/ScheduleDisplay';
+import { ScheduleComparison } from './components/ScheduleComparison';
 
 function App() {
   const [appState, setAppState] = useState<AppState>(createInitialState);
@@ -94,6 +95,9 @@ function App() {
             energyLevels={appState.energyLevels}
             title="Original Schedule"
           />
+        )}
+        {appState.optimizedEvents.length > 0 && (
+          <ScheduleComparison events={appState.optimizedEvents} />
         )}
       </div>
     </div>

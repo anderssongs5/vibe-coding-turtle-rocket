@@ -1,0 +1,99 @@
+.container {
+  margin-bottom: 32px;
+}
+
+.heading {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.summary {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.col {
+  /* intentional placeholder */
+}
+
+.colTitle {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+}
+
+.eventList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eventRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #fafafa;
+  border-radius: 6px;
+  border: 1px solid #ebebeb;
+  font-size: 0.85rem;
+}
+
+.original {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.optimized {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+}
+
+.arrow {
+  font-size: 1rem;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.eventName {
+  color: #333;
+  font-weight: 500;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.bold {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.diff {
+  font-size: 0.7rem;
+  color: #888;
+}

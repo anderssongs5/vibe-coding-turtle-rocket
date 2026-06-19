@@ -68,18 +68,18 @@
 - [x] Commit: "Add energy level data model"
 
 ### Iteration 2.2: Energy Selector Component
-- [ ] Create `src/components/EnergySelector.tsx`
-- [ ] Create `src/components/EnergySelector.module.css` (or styled-components)
-- [ ] Implement 12 hour blocks (8 AM to 8 PM)
-- [ ] Add click interaction to cycle energy levels
-- [ ] Display appropriate emoji and colors
-- [ ] Add hover effects
-- [ ] Write test: Renders 12 hour blocks
-- [ ] Write test: Click cycling works
-- [ ] Write test: Visual states update
-- [ ] Write test: Keyboard navigation
-- [ ] Integrate into `App.tsx`
-- [ ] Commit: "Add energy selector component"
+- [x] Create `src/components/EnergySelector.tsx`
+- [x] Create `src/components/EnergySelector.module.css` (or styled-components)
+- [x] Implement 12 hour blocks (8 AM to 8 PM)
+- [x] Add click interaction to cycle energy levels
+- [x] Display appropriate emoji and colors
+- [x] Add hover effects
+- [x] Write test: Renders 12 hour blocks
+- [x] Write test: Click cycling works
+- [x] Write test: Visual states update
+- [x] Write test: Keyboard navigation
+- [x] Integrate into `App.tsx`
+- [x] Commit: "Add energy selector component"
 
 ### Iteration 2.3: Energy Persistence
 - [ ] Add "Reset to Default" button

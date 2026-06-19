@@ -1,0 +1,98 @@
+.wrapper {
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.grid {
+  display: flex;
+  height: 480px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hours {
+  width: 52px;
+  flex-shrink: 0;
+  border-right: 1px solid #e0e0e0;
+  background: #fafafa;
+}
+
+.hourLabel {
+  height: calc(100% / 12);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2px 6px 0 0;
+  font-size: 0.7rem;
+  color: #888;
+  box-sizing: border-box;
+}
+
+.eventArea {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.energyBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.gridLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #f0f0f0;
+  pointer-events: none;
+}
+
+.event {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  border-left: 4px solid #ccc;
+  background: #fff;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  box-sizing: border-box;
+}
+
+.eventTime {
+  font-size: 0.65rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.eventTitle {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #aaa;
+  font-size: 0.9rem;
+}

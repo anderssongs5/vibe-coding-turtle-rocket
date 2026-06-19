@@ -10,6 +10,7 @@ import { setUploadedEvents, setClassifiedEvents, setOptimizedEvents } from './ut
 import type { AppState, EnergyLevel } from './types';
 import { EnergySelector } from './components/EnergySelector';
 import { FileUpload } from './components/FileUpload';
+import { ScheduleDisplay } from './components/ScheduleDisplay';
 
 function App() {
   const [appState, setAppState] = useState<AppState>(createInitialState);
@@ -86,6 +87,14 @@ function App() {
           selectedFileName={selectedFileName}
           onClear={handleFileClear}
         />
+        {appState.classifiedEvents.length > 0 && (
+          <ScheduleDisplay
+            events={appState.classifiedEvents}
+            showEnergyLevels
+            energyLevels={appState.energyLevels}
+            title="Original Schedule"
+          />
+        )}
       </div>
     </div>
   );

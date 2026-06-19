@@ -210,17 +210,17 @@
 ## 📅 Phase 6: Schedule Preview
 
 ### Iteration 6.1: Schedule Display Component
-- [ ] Create `src/components/ScheduleDisplay.tsx`
-- [ ] Create `src/components/ScheduleDisplay.module.css`
-- [ ] Implement hourly grid (8 AM - 8 PM)
-- [ ] Add hour markers
-- [ ] Position events by time
-- [ ] Show event duration
-- [ ] Apply cognitive load colors
-- [ ] Write test: Correct positioning
-- [ ] Write test: Event rendering
-- [ ] Write test: Empty state
-- [ ] Commit: "Add schedule display"
+- [x] Create `src/components/ScheduleDisplay.tsx`
+- [x] Create `src/components/ScheduleDisplay.module.css`
+- [x] Implement hourly grid (8 AM - 8 PM)
+- [x] Add hour markers
+- [x] Position events by time
+- [x] Show event duration
+- [x] Apply cognitive load colors
+- [x] Write test: Correct positioning
+- [x] Write test: Event rendering
+- [x] Write test: Empty state
+- [x] Commit: "Add schedule display"
 
 ### Iteration 6.2: Comparison View
 - [ ] Create `src/components/ScheduleComparison.tsx`

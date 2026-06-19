@@ -167,11 +167,11 @@
 ## 📊 Phase 5: Schedule Optimization
 
 ### Iteration 5.1: Optimization Algorithm
-- [ ] Create `src/utils/timeSlotMapper.ts`:
-  - [ ] `createTimeSlotMap()` function
-  - [ ] `getAvailableSlots()` function
-  - [ ] `isSlotAvailable()` function
-  - [ ] Time utility functions
+- [x] Create `src/utils/timeSlotMapper.ts`:
+  - [x] `createTimeSlotMap()` function
+  - [x] `getAvailableSlots()` function
+  - [x] `isSlotAvailable()` function
+  - [x] Time utility functions
 - [ ] Create `src/utils/optimizer.ts`
 - [ ] Implement core algorithm:
   - [ ] Sort events by cognitive load

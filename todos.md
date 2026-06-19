@@ -132,21 +132,21 @@
 ## 🏷️ Phase 4: Event Classification
 
 ### Iteration 4.1: Keyword Configuration
-- [ ] Create `src/config/keywords.ts`
-- [ ] Define `HEAVY_KEYWORDS` array:
-  - [ ] Work-related: meeting, review, presentation, interview
-  - [ ] Planning: strategy, planning, roadmap, brainstorm
-  - [ ] Analysis: analysis, report, assessment, evaluation
-  - [ ] Decision: decision, approval, priority, budget
-- [ ] Define `LIGHT_KEYWORDS` array:
-  - [ ] Breaks: lunch, break, coffee, snack
-  - [ ] Social: birthday, happy hour, team lunch
-  - [ ] Personal: gym, workout, appointment
-  - [ ] Optional: optional, tentative, hold
-- [ ] Organize keywords by category
-- [ ] Write test: No keyword conflicts
-- [ ] Write test: Comprehensive coverage
-- [ ] Commit: "Add keyword configuration"
+- [x] Create `src/config/keywords.ts`
+- [x] Define `HEAVY_KEYWORDS` array:
+  - [x] Work-related: meeting, review, presentation, interview
+  - [x] Planning: strategy, planning, roadmap, brainstorm
+  - [x] Analysis: analysis, report, assessment, evaluation
+  - [x] Decision: decision, approval, priority, budget
+- [x] Define `LIGHT_KEYWORDS` array:
+  - [x] Breaks: lunch, break, coffee, snack
+  - [x] Social: birthday, happy hour, team lunch
+  - [x] Personal: gym, workout, appointment
+  - [x] Optional: optional, tentative, hold
+- [x] Organize keywords by category
+- [x] Write test: No keyword conflicts
+- [x] Write test: Comprehensive coverage
+- [x] Commit: "Add keyword configuration"
 
 ### Iteration 4.2: Classification Engine
 - [ ] Create `src/utils/classifier.ts`

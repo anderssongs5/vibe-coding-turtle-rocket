@@ -5,7 +5,8 @@ import { resetEnergyLevels } from './utils/energyHelpers';
 import { validateFileType, validateFileSize, checkICSFormat } from './utils/validation';
 import { parseICSFile } from './utils/icsParser';
 import { classifyEvents } from './utils/classifier';
-import { setUploadedEvents, setClassifiedEvents } from './utils/stateHelpers';
+import { optimizeSchedule } from './utils/optimizer';
+import { setUploadedEvents, setClassifiedEvents, setOptimizedEvents } from './utils/stateHelpers';
 import type { AppState, EnergyLevel } from './types';
 import { EnergySelector } from './components/EnergySelector';
 import { FileUpload } from './components/FileUpload';
@@ -49,7 +50,12 @@ function App() {
       try {
         const events = parseICSFile(content);
         const classified = classifyEvents(events);
-        setAppState((s) => setClassifiedEvents(setUploadedEvents(setProcessing(s, false), events), classified));
+        setAppState((s) => {
+          const withUploaded = setUploadedEvents(setProcessing(s, false), events);
+          const withClassified = setClassifiedEvents(withUploaded, classified);
+          const optimized = optimizeSchedule(classified, s.energyLevels);
+          return setOptimizedEvents(withClassified, optimized);
+        });
       } catch {
         setUploadError('Could not parse the calendar file.');
         setAppState((s) => setProcessing(s, false));

@@ -172,16 +172,16 @@
   - [x] `getAvailableSlots()` function
   - [x] `isSlotAvailable()` function
   - [x] Time utility functions
-- [ ] Create `src/utils/optimizer.ts`
-- [ ] Implement core algorithm:
-  - [ ] Sort events by cognitive load
-  - [ ] Match heavy events to high energy
-  - [ ] Match light events to low energy
-  - [ ] Preserve order within groups
-- [ ] Write test: Basic optimization
-- [ ] Write test: No suitable slots scenario
-- [ ] Write test: Duration preservation
-- [ ] Commit: "Add optimization algorithm"
+- [x] Create `src/utils/optimizer.ts`
+- [x] Implement core algorithm:
+  - [x] Sort events by cognitive load
+  - [x] Match heavy events to high energy
+  - [x] Match light events to low energy
+  - [x] Preserve order within groups
+- [x] Write test: Basic optimization
+- [x] Write test: No suitable slots scenario
+- [x] Write test: Duration preservation
+- [x] Commit: "Add optimization algorithm"
 
 ### Iteration 5.2: Schedule Generation
 - [ ] Generate optimized schedule

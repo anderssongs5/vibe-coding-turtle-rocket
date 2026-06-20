@@ -15,7 +15,12 @@ export function EnergySelector({ energyLevels, onEnergyChange, onReset }: Props)
     <section className={styles.container} aria-label="Energy levels">
       <div className={styles.header}>
         <h2 className={styles.title}>Your Energy Levels</h2>
-        <button className={styles.resetBtn} onClick={onReset} type="button">
+        <button
+          className={styles.resetBtn}
+          onClick={onReset}
+          type="button"
+          title="Reset all hours to medium energy"
+        >
           Reset to Default
         </button>
       </div>
@@ -28,6 +33,7 @@ export function EnergySelector({ energyLevels, onEnergyChange, onReset }: Props)
               role="listitem"
               type="button"
               aria-label={`${slot.label} — ${level} energy`}
+              title="Click to cycle energy: low → medium → high → low"
               className={`${styles.block} ${styles[level]}`}
               onClick={() => onEnergyChange(index, cycleEnergyLevel(level))}
             >

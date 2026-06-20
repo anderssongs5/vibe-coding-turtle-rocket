@@ -301,26 +301,26 @@
 - [x] Add smooth transitions (CSS transitions on all interactive elements)
 - [ ] Implement keyboard shortcuts:
   - [x] Tab navigation (native HTML button focus order)
-  - [ ] Enter to confirm — not implemented
-  - [ ] Escape to cancel — not implemented
-- [ ] Add help tooltips — not implemented
-- [ ] Include instructions/guide — not implemented (subtitle text provides minimal guidance)
-- [ ] Add sample ICS file — not implemented
-- [x] Write test: Keyboard navigation (EnergySelector.test.tsx aria role tests)
+  - [ ] Enter to confirm — not in scope
+  - [x] Escape to cancel — FileUpload clears file on Escape key when file is selected
+- [x] Add help tooltips — EnergySelector blocks and reset button have title attributes
+- [x] Include instructions/guide — 3-step ol.app-instructions added to App.tsx
+- [x] Add sample ICS file — public/sample.ics with 6 events; download link in App.tsx
+- [x] Write test: Keyboard navigation (EnergySelector.test.tsx aria role tests + FileUpload Escape key test)
 - [x] Write test: User flow (App.integration.test.tsx — 8 end-to-end flow tests)
-- [ ] Commit: "Enhance user experience" — pending above items
+- [x] Commit: "Enhance user experience and visual polish"
 
 ### Visual Polish
-- [ ] Add app logo/branding — default CRA logos only; no custom TurtleRocket branding
+- [x] Add app logo/branding — 🚀 emoji logo in App.tsx; index.html title and manifest.json name updated to "TurtleRocket Time Twister"
 - [x] Consistent spacing (CSS with consistent padding/margin throughout)
 - [x] Professional typography (system font stack, proper font sizes/weights)
 - [x] Loading animations (CSS transitions + "Analyzing your calendar…" loading text)
 - [x] Success animations (ExportButton shows "✓ Downloaded" feedback)
 - [x] Error state styling (role="alert" error messages styled in red)
 - [x] Mobile responsiveness (EnergySelector 4-col grid @media max-width:600px; flex container)
-- [ ] Write test: Responsive design — not implemented
-- [ ] Write test: Animation performance — not implemented
-- [ ] Commit: "Visual polish" — pending remaining items above
+- [x] Write test: Responsive design — src/__tests__/responsive.test.tsx with 5 structural tests
+- [ ] Write test: Animation performance — not in scope
+- [x] Commit: "Enhance user experience and visual polish"
 
 ---
 

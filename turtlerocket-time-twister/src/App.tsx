@@ -84,10 +84,17 @@ function App() {
     <ErrorBoundary>
       <div className="app-wrapper">
         <div className="app-container">
+          <div className="app-logo" aria-hidden="true">🚀</div>
           <h1>TurtleRocket Time Twister</h1>
           <p className="app-subtitle">
             Set your energy levels, upload a calendar, and get an optimized schedule.
           </p>
+
+          <ol className="app-instructions">
+            <li>Set your energy levels — click each hour block to mark when you feel low 🐢, medium 😐, or high 🚀 energy.</li>
+            <li>Upload your calendar — import any <code>.ics</code> file (Google Calendar, Outlook, Apple Calendar).</li>
+            <li>Download optimized — TurtleRocket reorders your events to match your energy and exports a new <code>.ics</code> file.</li>
+          </ol>
 
           <EnergySelector
             energyLevels={appState.energyLevels}
@@ -102,6 +109,13 @@ function App() {
             selectedFileName={selectedFileName}
             onClear={handleFileClear}
           />
+
+          <p className="app-sample-link">
+            No .ics file yet?{' '}
+            <a href={`${process.env.PUBLIC_URL}/sample.ics`} download="sample.ics">
+              Download a sample calendar
+            </a>
+          </p>
 
           {appState.isProcessing && (
             <p className="app-loading" aria-live="polite">Analyzing your calendar…</p>

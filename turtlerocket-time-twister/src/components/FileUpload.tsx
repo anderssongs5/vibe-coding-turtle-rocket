@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './FileUpload.module.css';
 
 interface Props {
@@ -11,6 +11,15 @@ interface Props {
 
 export function FileUpload({ onFileSelect, isProcessing, error, selectedFileName, onClear }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!selectedFileName) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') handleClear();
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [selectedFileName]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];

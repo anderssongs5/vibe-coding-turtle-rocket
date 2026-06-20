@@ -15,9 +15,9 @@ export function createTimeSlotMap(energyLevels: EnergyLevel[]): TimeSlotMap {
 
 export function getAvailableSlots(map: TimeSlotMap, energy: EnergyLevel): number[] {
   const slots: number[] = [];
-  for (const [hour, level] of map.entries()) {
+  map.forEach((level, hour) => {
     if (level === energy) slots.push(hour);
-  }
+  });
   return slots.sort((a, b) => a - b);
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { FileUpload } from '../components/FileUpload';
 
@@ -75,5 +75,12 @@ describe('FileUpload', () => {
   it('disables input during processing', () => {
     renderUpload({ isProcessing: true });
     expect(document.getElementById('ics-input')).toBeDisabled();
+  });
+
+  it('pressing Escape clears the selected file', () => {
+    const onClear = jest.fn();
+    renderUpload({ selectedFileName: 'my-calendar.ics', onClear });
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClear).toHaveBeenCalledTimes(1);
   });
 });

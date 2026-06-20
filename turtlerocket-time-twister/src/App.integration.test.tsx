@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -25,18 +25,21 @@ describe('App integration', () => {
   it('renders the heading and subtitle', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: /turtlerocket time twister/i })).toBeInTheDocument();
-    expect(screen.getByText(/set your energy levels/i)).toBeInTheDocument();
+    // subtitle + instructions list both contain "set your energy levels" — use getAllByText
+    expect(screen.getAllByText(/set your energy levels/i).length).toBeGreaterThan(0);
   });
 
   it('renders 12 energy blocks on mount', () => {
     render(<App />);
-    expect(screen.getAllByRole('listitem')).toHaveLength(12);
+    const energySection = screen.getByRole('region', { name: /energy levels/i });
+    expect(within(energySection).getAllByRole('listitem')).toHaveLength(12);
   });
 
   it('cycling an energy block updates its label', async () => {
     const user = userEvent.setup();
     render(<App />);
-    const blocks = screen.getAllByRole('listitem');
+    const energySection = screen.getByRole('region', { name: /energy levels/i });
+    const blocks = within(energySection).getAllByRole('listitem');
     await user.click(blocks[0]); // medium → high
     expect(blocks[0]).toHaveAttribute('aria-label', expect.stringContaining('high'));
   });
@@ -44,7 +47,8 @@ describe('App integration', () => {
   it('reset button restores all blocks to medium', async () => {
     const user = userEvent.setup();
     render(<App />);
-    const blocks = screen.getAllByRole('listitem');
+    const energySection = screen.getByRole('region', { name: /energy levels/i });
+    const blocks = within(energySection).getAllByRole('listitem');
     await user.click(blocks[0]); // cycle to high
     await user.click(screen.getByRole('button', { name: /reset to default/i }));
     blocks.forEach((b) => expect(b).toHaveAttribute('aria-label', expect.stringContaining('medium')));
